@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""
+Module pour résoudre le problème des lockboxes.
+"""
+
+
 def canUnlockAll(boxes):
+    """
+    Détermine si toutes les boîtes verrouillées peuvent être ouvertes.
+    """
+
     opened_boxes = [0]
     i = 0
 
