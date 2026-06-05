@@ -8,6 +8,7 @@ def print_stats(total_size, status_codes):
         if status_codes[code] > 0:
             print("{}: {}".format(code, status_codes[code]))
 
+
 def main():
     total_size = 0
     status_codes = {
