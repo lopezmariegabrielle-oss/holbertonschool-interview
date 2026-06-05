@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+"""
+Module pour analyser les données de logs provenant de stdin.
+"""
 import sys
 
 
 def print_stats(total_size, status_codes):
+    """
+    Affiche la taille totale du fichier et le compte des codes de statut.
+    """
     print("File size: {}".format(total_size))
     for code in sorted(status_codes.keys()):
         if status_codes[code] > 0:
@@ -10,6 +16,9 @@ def print_stats(total_size, status_codes):
 
 
 def main():
+    """
+    Fonction principale lisant stdin et calculant les métriques.
+    """
     total_size = 0
     status_codes = {
         "200": 0, "301": 0, "400": 0, "401": 0,
