@@ -29,9 +29,17 @@ def main():
     try:
         for line in sys.stdin:
             tokens = line.split()
+
+            if len(tokens) < 2:
+                continue
+
             file_size = tokens[-1]
-            total_size += int(file_size)
             status_code = tokens[-2]
+
+            try:
+                total_size += int(file_size)
+            except ValueError:
+                continue
 
             if status_code in status_codes:
                 status_codes[status_code] += 1
