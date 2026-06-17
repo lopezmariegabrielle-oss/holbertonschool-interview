@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Module pour résoudre le problème des N reines
 """
@@ -19,6 +19,7 @@ if N < 4:
     print("N must be at least 4")
     sys.exit(1)
 
+
 def est_valide(reines, ligne, colonne):
     """Vérifie si on peut placer une reine à cette position"""
     for reine in reines:
@@ -30,6 +31,7 @@ def est_valide(reines, ligne, colonne):
             return False
     return True
 
+
 def resoudre_nreines(N, ligne, reines):
     """Fonction récursive pour trouver toutes les solutions"""
     if ligne == N:
@@ -39,6 +41,7 @@ def resoudre_nreines(N, ligne, reines):
     for colonne in range(N):
         if est_valide(reines, ligne, colonne):
             resoudre_nreines(N, ligne + 1, reines + [[ligne, colonne]])
+
 
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
